@@ -7,13 +7,13 @@ public class Tasks1 {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         Map<String,Integer> box = new HashMap<>();
-
+        List<String> colorsAndCount;
         while(!input.equals("End")){
 
-            List<String> colorsAndCount = new ArrayList<>(Arrays.asList(input.split(":")));
+            colorsAndCount = Arrays.asList(input.split(":"));
             String color = colorsAndCount.get(0);
             int count = Integer.parseInt(colorsAndCount.get(1));
-            colorsAndCount.clear();
+
             box.merge(color,count,Integer::sum);
 
 
